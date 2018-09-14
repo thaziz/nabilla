@@ -59,17 +59,8 @@ Route::get('/penjualan/barang-titipan/serahTerima/{id}', 'itemTitipanController@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+// Barang Titip
+Route::get('/penjualan/barang-titip/index', 'ItemTitipController@index');
 
 
 
