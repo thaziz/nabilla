@@ -5,12 +5,12 @@
                 <!--BEGIN TITLE & BREADCRUMB PAGE-->
                 <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
                     <div class="page-header pull-left" style="font-family: 'Raleway', sans-serif;">
-                        <div class="page-title">Master Data Barang</div>
+                        <div class="page-title">Master Data Bahan Baku</div>
                     </div>
                     <ol class="breadcrumb page-breadcrumb pull-right" style="font-family: 'Raleway', sans-serif;">
                         <li><i class="fa fa-home"></i>&nbsp;<a href="{{ url('/home') }}">Home</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
                         <li><i></i>&nbsp;Master&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
-                        <li class="active">Master Data Barang</li>
+                        <li class="active">Master Data Bahan Baku</li>
                     </ol>
                     <div class="clearfix">
                     </div>
@@ -27,7 +27,7 @@
                   
                                 
                               <ul id="generalTab" class="nav nav-tabs">
-                                <li class="active"><a href="#alert-tab" data-toggle="tab">Master Data Barang</a></li>
+                                <li class="active"><a href="#alert-tab" data-toggle="tab">Master Data Bahan Baku</a></li>
                                 <!-- <li><a href="#note-tab" data-toggle="tab">2</a></li>
                                 <li><a href="#label-badge-tab" data-toggle="tab">3</a></li> -->
                               </ul>
@@ -40,7 +40,7 @@
 
                                   <div align="right" class="col-md-12 col-sm-12 col-xs-12" style="margin-bottom:10px;">
     
-                                    <a href="{{ url('master/databarang/tambah_barang') }}">
+                                    <a href="{{ url('master/databaku/tambah_baku') }}">
                                     <button type="button" class="btn btn-box-tool" title="Tambahkan Data Item">
                                      <i class="fa fa-plus" aria-hidden="true">
                                          &nbsp;
@@ -54,19 +54,21 @@
                           <table class="table tabelan table-hover table-bordered" width="100%" cellspacing="0" id="data">
                             <thead>
                                 <tr>
-                                  <th class="wd-15p" width="5%">Kode Barang</th>
-                                  <th class="wd-15p">Nama Barang</th>
+                                  <th class="wd-15p" width="5%">ID</th>
+                                  <th class="wd-15p">Nama Bahan</th>
+                                  <th class="wd-20p" width="5%">Jumlah</th>
                                   <th class="wd-15p" width="5%">Satuan</th>
-                                  <th class="wd-15p">Kelompok Barang</th>
+                                  <th class="wd-15p">Harga</th>
                                   <th class="wd-15p" width="10%">Aksi</th>
                                 </tr>
                               </thead>
                               <tbody>
                                 <tr>
-                                  <td>BRG0218/001</td>
+                                  <td>BB-01</td>
                                   <td>Tepung Beras</td>
+                                  <td>2</td>
                                   <td>Kg</td>
-                                  <td></td>
+                                  <td>Rp. <?php echo number_format(2000,0,'','.'); ?>,-</td>
                                   <td>
                                     <div class="">    
                                       <a href="#" class="btn btn-warning btn-sm" title="Edit"><i class="glyphicon glyphicon-pencil"></i></a>
@@ -75,10 +77,11 @@
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td>BRG0218/002</td>
+                                  <td>BB-02</td>
                                   <td>Tepung Kanji</td>
+                                  <td>3</td>
                                   <td>Kg</td>
-                                  <td></td>
+                                  <td>Rp. <?php echo number_format(3000,0,'','.'); ?>,-</td>
                                   <td>
                                     <div class="">    
                                       <a href="#" class="btn btn-warning btn-sm" title="Edit"><i class="glyphicon glyphicon-pencil"></i></a>
@@ -87,10 +90,11 @@
                                   </td>
                                 </tr>
                                 <tr>
-                                  <td>BRG0218/003</td>
-                                  <td>Tepung Terigu</td>
+                                  <td>BB-03</td>
+                                  <td>Gula</td>
+                                  <td>1</td>
                                   <td>Kg</td>
-                                  <td></td>
+                                  <td>Rp. <?php echo number_format(10000,0,'','.'); ?>,-</td>
                                   <td>
                                     <div class="">    
                                       <a href="#" class="btn btn-warning btn-sm" title="Edit"><i class="glyphicon glyphicon-pencil"></i></a>
@@ -126,10 +130,6 @@
                     
             </div>
           </div>
-
-        </div>
-      </div>
-    </div>
 
 @endsection
 @section("extra_scripts")

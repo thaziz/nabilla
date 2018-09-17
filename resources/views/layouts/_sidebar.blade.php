@@ -4,7 +4,7 @@
                 <button type="button" data-toggle="collapse" data-target=".sidebar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
                 <a id="logo" href="{{ url('/home') }}" class="navbar-brand"><span class="fa fa-rocket"></span><span class="logo-text">Nabila Bakery</span><span style="display: none;" class="logo-text-icon">µ</span></a></div>
             <div class="topbar-main"><a id="menu-toggle" href="#" class="hidden-xs"><i class="fa fa-bars"></i></a>
-                
+
                 <form id="topbar-search" action="#" method="" class="hidden-sm hidden-xs">
                     <div class="input-icon right text-white"><a href="#"><i class="fa fa-search"></i></a><input type="text" placeholder="Search here..." onkeyup="myFunction()" id="nav-search" class="form-control text-white"/></div>
                 </form>
@@ -26,7 +26,7 @@
                             <li><a href="#"><i class="fa fa-tasks"></i>My Tasks<span class="badge badge-success">7</span></a></li>
                             <li class="divider"></li>
                             <li><a href="#"><i class="fa fa-lock"></i>Lock Screen</a></li>
-                            <li><a 
+                            <li><a
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i>Logout
                                         </a>
@@ -88,9 +88,9 @@
             <nav id="sidebar" role="navigation" data-step="2" data-intro="Template has &lt;b&gt;many navigation styles&lt;/b&gt;"
                 data-position="right" class="navbar-default navbar-static-side">
             <div class="sidebar-collapse menu-scroll">
-            
+
                 <ul id="side-menu" class="nav">
-                    
+
                     <div class="clearfix"></div>
                     <li class="menu-primer {{Request::is('master') ? 'active' : '' || Request::is('master/*') ? 'active' : '' }}"><a href="#"><i class="fa fa-tachometer fa-fw">
                         <div class="icon-bg bg-orange"></div>
@@ -115,11 +115,11 @@
                             </li>
                             <li class="menu-sekunder {{ Request::is('master/datatransaksi/transaksi') ? 'active' : '' || Request::is('master/datatransaksi/*') ? 'active' : '' }}"><a href="{{ url('/master/datatransaksi/transaksi') }}"><span class="submenu-title">Master Data Transaksi Keuangan</span></a>
                             </li>
-                            <li class="menu-sekunder {{ Request::is('master/databarang/barang') ? 'active' : '' || Request::is('master/databarang/*') ? 'active' : '' }}"><a href="{{ url('/master/databarang/barang') }}"><span class="submenu-title">Master Data Barang</span></a>
+                            <li class="menu-sekunder {{ Request::is('master/databarang/barang') ? 'active' : '' || Request::is('master/databarang/*') ? 'active' : '' }}"><a href="{{ url('/master/item/index') }}"><span class="submenu-title">Master Data Barang</span></a>
                             </li>
-                        </ul>   
-                    </li>           
-                    
+                        </ul>
+                    </li>
+
                     <li class="menu-primer {{Request::is('purchasing') ? 'active' : '' || Request::is('purcahse-plan/*') ? 'active' : '' }}"><a href="#"><i class="fa fa-credit-card fa-fw">
                         <div class="icon-bg bg-green"></div>
                         </i><span class="menu-title">Purchasing</span><span class="fa arrow"></span>
@@ -150,7 +150,7 @@
                             </li> -->
                         </ul>
                     </li>
-                    
+
                     <li  class="menu-primer {{Request::is('inventory') ? 'active' : '' || Request::is('inventory/*') ? 'active' : '' }}"><a href="#"><i class="fa fa-desktop fa-fw">
                         <div class="icon-bg bg-green"></div>
                         </i><span class="menu-title">Inventory</span><span class="fa arrow"></span>
@@ -171,7 +171,7 @@
                             </li>
                         </ul>
                     </li>
-                    
+
                     <li  class="menu-primer {{Request::is('produksi') ? 'active' : '' || Request::is('produksi/*') ? 'active' : '' }}"><a href="#"><i class="fa fa-bar-chart-o fa-fw">
                         <div class="icon-bg bg-green"></div>
                         </i><span class="menu-title">Produksi</span><span class="fa arrow"></span>
@@ -186,8 +186,8 @@
                             </li>
                             <li class="menu-sekunder {{ Request::is('produksi/spk/spk') ? 'active' : '' || Request::is('produksi/spk/*') ? 'active' : '' }}"><a href="{{ url('/produksi/spk/spk') }}"><span class="submenu-title">Manajemen SPK</span><span class="hidden">Produksi</span></a>
                             </li>
-                            
-                            
+
+
                             <!-- <li class="menu-sekunder {{ Request::is('produksi/produksi/produksi2') ? 'active' : '' || Request::is('produksi/produksi/*') ? 'active' : '' }}"><a href="{{ url('/produksi/produksi/produksi2') }}"><span class="submenu-title">Manajemen Produksi</span><span class="hidden">Produksi</span></a>
                             </li> -->
                             <li class="menu-sekunder {{ Request::is('produksi/hasil-produksi') ? 'active' : '' }}"><a href="{{ url('produksi/hasil-produksi/index') }}"><span class="submenu-title">Manajemen Output Produksi</span><span class="hidden">Produksi</span></a>
@@ -196,7 +196,7 @@
                             </li>
                         </ul>
                     </li>
-                    
+
                     <li  class="menu-primer {{Request::is('penjualan') ? 'active' : '' || Request::is('penjualan/*') ? 'active' : '' }}"><a href="#"><i class="fa fa-truck fa-fw">
                         <div class="icon-bg bg-green"></div>
                         </i><span class="menu-title">Penjualan</span><span class="fa arrow"></span>
@@ -204,10 +204,10 @@
                         <span class="hidden">
                             Manajemen Harga
                             Manajemen Promosi
-                            
+
                             Rencana Penjualan
                             POS Penjualan Toko / Mobil
-                            
+
                             POS Penjualan Pesanan
                             POS Penjualan Konsinyasi
                             Laporan Penjualan Mobile Sales
@@ -229,15 +229,15 @@
                             </li> -->
                             <li class="menu-sekunder {{ Request::is('penjualan/rencanapenjualan/rencana') ? 'active' : '' || Request::is('penjualan/rencanapenjualan/*') ? 'active' : '' }}"><a href="{{ url('/penjualan/rencanapenjualan/rencana') }}"><span class="submenu-title">Rencana Penjualan</span><span class="hidden">Penjualan</span></a>
                             </li>
-                            <li class="menu-sekunder {{ 
-                            Request::is('penjualan/POSpenjualan/POSpenjualan') ? 'active' : '' 
-                            || Request::is('penjualan/pos-toko/*') ? 'active' : '' 
-                            || Request::is('penjualan/POSpenjualanmobile/POSpenjualanmobile') ? 'active' : '' 
-                            || Request::is('penjualan/POSpenjualanmobile/*') ? 'active' : '' 
-                            || Request::is('penjualan/POSpenjualanToko/POSpenjualanToko') ? 'active' : '' 
-                            || Request::is('penjualan/POSpenjualanToko/*') ? 'active' : '' 
+                            <li class="menu-sekunder {{
+                            Request::is('penjualan/POSpenjualan/POSpenjualan') ? 'active' : ''
+                            || Request::is('penjualan/pos-toko/*') ? 'active' : ''
+                            || Request::is('penjualan/POSpenjualanmobile/POSpenjualanmobile') ? 'active' : ''
+                            || Request::is('penjualan/POSpenjualanmobile/*') ? 'active' : ''
+                            || Request::is('penjualan/POSpenjualanToko/POSpenjualanToko') ? 'active' : ''
+                            || Request::is('penjualan/POSpenjualanToko/*') ? 'active' : ''
                         }}"><a href="{{ url('/penjualan/POSpenjualan/POSpenjualan') }}"><span class="submenu-title">POS Penjualan Toko / Mobil</span><span class="hidden">Penjualan</span></a>
-                            </li><!-- 
+                            </li><!--
                             <li class="menu-sekunder {{ Request::is('penjualan/POSpenjualanmobile/POSpenjualanmobile') ? 'active' : '' || Request::is('penjualan/POSpenjualanmobile/*') ? 'active' : '' }}"><a href="{{ url('/penjualan/POSpenjualanmobile/POSpenjualanmobile') }}"><span class="submenu-title">POS Penjualan Mobile</span><span class="hidden">Penjualan</span></a>
                             </li> -->
                             <li class="menu-sekunder {{ Request::is('penjualan/pos-pesanan/index') ? 'active' : '' || Request::is('penjualan/pos-pesanan/*') ? 'active' : '' }}"><a href="{{ url('/penjualan/pos-pesanan/index') }}"><span class="submenu-title">POS Penjualan Pesanan</span><span class="hidden">Penjualan</span></a>
@@ -246,7 +246,7 @@
                             <li class="menu-sekunder {{ Request::is('penjualan/barang-titipan/index') ? 'active' : '' || Request::is('penjualan/barang-titipan/*') ? 'active' : '' }}"><a href="{{ url('/penjualan/barang-titipan/index') }}"><span class="submenu-title">Catat Barang Titipan</span><span class="hidden">Penjualan</span></a>
                             </li>
 
-                            <li class="menu-sekunder {{ Request::is('penjualan/barang-titip/index') ? 'active' : '' || Request::is('penjualan/barang-titip/*') ? 'active' : '' }}"><a href="{{ url('/penjualan/barang-titip/index') }}"><span class="submenu-title">Catat Barang Titip</span><span class="hidden">Penjualan</span></a>
+                            <li class="menu-sekunder {{ Request::is('penjualan/barang-titip/index') ? 'active' : '' || Request::is('penjualan/barang-titip/*') ? 'active' : '' }}"><a href="{{ url('/penjualan/pos-pesanan/index') }}"><span class="submenu-title">Catat Barang Titip</span><span class="hidden">Penjualan</span></a>
                             </li>
 
 
@@ -272,7 +272,7 @@
                             </li>
                         </ul>
                     </li>
-                    
+
                     <li  class="menu-primer {{Request::is('hrd') ? 'active' : '' || Request::is('hrd/*') ? 'active' : '' }}"><a href="#"><i class="fa fa-users fa-fw">
                         <div class="icon-bg bg-green"></div>
                         </i><span class="menu-title">HRD</span><span class="fa arrow"></span>
@@ -303,7 +303,7 @@
                             </li>
                         </ul>
                     </li>
-                    
+
                     <li  class="menu-primer {{Request::is('keuangan') ? 'active' : '' || Request::is('keuangan/*') ? 'active' : '' }}"><a href="#"><i class="fa fa-money fa-fw">
                         <div class="icon-bg bg-green"></div>
                         </i><span class="menu-title">Keuangan</span><span class="fa arrow"></span>
@@ -338,7 +338,7 @@
                             </li>
                         </ul>
                     </li>
-                    
+
                     <li  class="menu-primer {{Request::is('system') ? 'active' : '' || Request::is('system/*') ? 'active' : '' }}"><a href="#"><i class="fa fa-cog fa-fw fa-spin">
                         <div class="icon-bg bg-green"></div>
                         </i><span class="menu-title">System</span><span class="fa arrow"></span>
@@ -349,8 +349,8 @@
                     Tahun Finansial
                         </span>
                     </a>
-                       
-                    
+
+
                         <ul class="nav nav-second-level">
                             <li class="menu-sekunder {{ Request::is('system/hakuser/user') ? 'active' : '' || Request::is('system/hakuser/*') ? 'active' : '' }}"><a href="{{ url('/system/hakuser/user') }}"><span class="submenu-title">Manajemen User</span><span class="hidden">System</span></a>
                             </li>
@@ -375,8 +375,8 @@
                             Purchasing
                         </span>
                     </a>
-                       
-                    
+
+
                         <ul class="nav nav-second-level">
                             <li class="menu-sekunder {{ Request::is('nabila/membership/member') ? 'active' : '' || Request::is('nabila/membership/*') ? 'active' : '' }}"><a href="{{ url('/nabila/membership/member') }}"><span class="submenu-title">Membership</span><span class="hidden">Nabila Moslem</span></a>
                             </li>
@@ -395,7 +395,7 @@
                         </ul>
                     </li>
                 </ul>
-            
+
             </div>
         </nav>
 
@@ -406,7 +406,7 @@
             <!--BEGIN CHAT FORM-->
             <div id="chat-form" class="fixed">
                 <div class="chat-inner">
-                    <h2 class="chat-header">    
+                    <h2 class="chat-header">
                         <a href="javascript:;" class="chat-form-close pull-right"><i class="glyphicon glyphicon-remove">
                         </i></a><i class="fa fa-users"></i>&nbsp; Message &nbsp;<span class="badge badge-info">3</span></h2>
                     <div id="group-1" class="chat-group">
@@ -469,19 +469,19 @@ function myFunction() {
     filter = input.value.toLowerCase();
     ul = document.getElementById("side-menu");
     li = ul.getElementsByTagName("li");
-    
+
     for (i = 0; i < li.length; i++) {
         a = li[i].getElementsByTagName("a")[0];
         if (a.innerHTML.toLowerCase().indexOf(filter) > -1) {
-            
+
             li[i].style.display = "";
-        
+
         } else {
-           
+
             li[i].style.display = "none";
-           
+
         }
-        
+
     }
 }
 
