@@ -1,4 +1,4 @@
-@extends('main')
+ferdy@extends('main')
 @section('content')
             <!--BEGIN PAGE WRAPPER-->
             <div id="page-wrapper">
