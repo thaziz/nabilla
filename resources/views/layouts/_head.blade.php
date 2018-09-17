@@ -15,6 +15,7 @@
     <link type="text/css" rel="stylesheet" href="{{ asset ('assets/styles/font-awesome.min.css') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset ('assets/styles/bootstrap.min.css') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset ('assets/styles/animate.css') }}">
+    <link href="{{ asset('assets/vendors/sweetalert/sweetalert.css') }}" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="{{ asset ('assets/styles/all.css') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset ('assets/styles/main.css') }}">
     <link type="text/css" rel="stylesheet" href="{{ asset ('assets/styles/style-responsive.css') }}">
@@ -35,11 +36,10 @@
 
     <link rel="stylesheet" type="text/css" href="{{ asset ('assets/select2/select2.css')}}">
 
-    
+
     <!-- <link rel="icon" href="{{ asset('assets/images/tamma-logo.ico') }}"> -->
     <style type="text/css">
         .alignAngka{
             text-align:right;
         }
     </style>
-    
