@@ -246,7 +246,7 @@
                             <li class="menu-sekunder {{ Request::is('penjualan/barang-titipan/index') ? 'active' : '' || Request::is('penjualan/barang-titipan/*') ? 'active' : '' }}"><a href="{{ url('/penjualan/barang-titipan/index') }}"><span class="submenu-title">Catat Barang Titipan</span><span class="hidden">Penjualan</span></a>
                             </li>
 
-                            <li class="menu-sekunder {{ Request::is('penjualan/barang-titip/index') ? 'active' : '' || Request::is('penjualan/barang-titip/*') ? 'active' : '' }}"><a href="{{ url('/penjualan/barang-titip/index') }}"><span class="submenu-title">Catat Barang Titip</span><span class="hidden">Penjualan</span></a>
+                            <li class="menu-sekunder {{ Request::is('penjualan/barang-titip/index') ? 'active' : '' || Request::is('penjualan/barang-titip/*') ? 'active' : '' }}"><a href="{{ url('/penjualan/pos-pesanan/index') }}"><span class="submenu-title">Catat Barang Titip</span><span class="hidden">Penjualan</span></a>
                             </li>
 
 

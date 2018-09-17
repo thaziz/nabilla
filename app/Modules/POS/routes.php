@@ -56,11 +56,22 @@ Route::get('/penjualan/barang-titipan/{id}/edit', 'itemTitipanController@edit');
 Route::get('/penjualan/barang-titipan/update', 'itemTitipanController@update');
 
 Route::get('/penjualan/barang-titipan/serahTerima/{id}', 'itemTitipanController@serahTerima');
+Route::get('/penjualan/barang-titipan/serah-terima/store', 'itemTitipanController@serahTerimaStore');
 
 
 
-// Barang Titip
-Route::get('/penjualan/barang-titip/index', 'ItemTitipController@index');
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
