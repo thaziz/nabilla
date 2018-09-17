@@ -146,7 +146,26 @@ class d_item_titipan extends Model
     }
 
 
+static function serahTerimaStore($request){  
+  return DB::transaction(function () use ($request) {      
+    $updateTitipan=d_item_titipan::where('it_id',$request->it_id);
+    $updateTitipan->update([
+                      'it_status'=>'terima'
+                    ]);
+    for ($i=0; $i <count($request->idt_item) ; $i++) { 
+      $updateTitipanDt=d_itemtitipan_dt::where('idt_itemtitipan',$request->idt_itemtitipan)->where('idt_detailid',$request->idt_detailid);
+      $idt_terjual= format::format($request->idt_terjual[$i]);  
+      $sisa= format::format($request->idt_sisa[$i]);  
 
+      $updateTitipanDt->update([
+            'idt_terjual'=>$idt_terjual,
+            'idt_sisa'=>$sisa,
+            'idt_action'=>$request->idt_action[$i]
+        ]);
+    }
+    return 'sukses';
+    });  
+  }
 
    
 }

@@ -49,8 +49,8 @@
 
            <div class="col-md-4 col-sm-6 col-xs-12">
              <div class="form-group">
-               <input type="text" class="move up1 form-control input-sm reset "  name="it_date" id="it_date" value="{{date('d-m-Y')}}" autocomplete="off">
-               <input type="hidden" class="form-control input-sm reset"  name="it_id" id="it_id" readonly="">
+               <input type="text" class="move up1 form-control input-sm reset "  name="it_date" id="it_date" value="{{date('d-m-Y')}}" autocomplete="off" disabled="">
+               <input type="hidden" class="form-control input-sm reset"  name="it_id" id="it_id" readonly="" value="{{$master->it_id}}">
                <input type="hidden" class="form-control input-sm reset"  name="it_status" id="it_status" readonly="">
              </div>
            </div>
@@ -145,7 +145,7 @@
                  <th width="4%">Stok</th>                 
                  <th width="4%">Jumlah</th>                 
                  <th width="4%">Terjual</th>                 
-                 <th width="4%">Sisa</th>                 
+                 <th width="6%">Sisa</th>                 
                  <th width="5%">Satuan</th>
                  <th width="6%">Harga</th>                                
                  <th width="7%">Total</th>                                                
@@ -154,35 +154,42 @@
                </thead> 
                <tbody class="bSalesDetail">
 
-   
+   @php
+        $totalTerjual=0;
+   @endPhp
    @foreach($data as $detail)
+   @php
+        $totalTerjual+=$detail->terjual*$detail->idt_price;
+   @endPhp
      <tr>   
           <tr class="detail{{$detail->i_id}}">
 
                <td>
-               <input style="width:100%" type="hidden" name="sd_sales[]" value="{{$detail->idt_itemtitipan}}">
-               <input style="width:100%" type="hidden" name="sd_detailid[]" value="{{$detail->idt_detailid}}">
-               <input style="width:100%" type="hidden" name="sd_item[]" value="{{$detail->i_id}}">
+               <input style="width:100%" type="hidden" name="idt_itemtitipan[]" value="{{$detail->idt_itemtitipan}}">
+               <input style="width:100%" type="hidden" name="idt_detailid[]" value="{{$detail->idt_detailid}}">
+                  
+               <input style="width:100%" type="hidden" name="idt_item[]" value="{{$detail->i_id}}">
                     <div style="padding-top:6px">{{$detail->i_code}} - {{$detail->i_name}}</div></td>
 
           <td><input class="stock stock{{$detail->i_id}}" value="{{number_format($detail->s_qty,0,',','.')}}" style="width:100%;text-align:right;border:none"  readonly="">
           </td>
 
-          <td ><input class="jumlahAwal{{$detail->i_id}}" style="width:100%;text-align:right;border:none" name="jumlahAwal[]" value="{{number_format($detail->idt_qty,0,',','.')}}" autocomplete="off"></td>
+          <td ><input class="jumlahAwal{{$detail->i_id}}" style="width:100%;text-align:right;border:none" name="jumlah[]" value="{{number_format($detail->idt_qty,0,',','.')}}" autocomplete="off"  readonly=""></td>
 
           
-          <td ><input class="jumlahAwal{{$detail->i_id}}" style="width:100%;text-align:right;border:none" name="jumlahAwal[]" value="{{number_format($detail->terjual,0,',','.')}}" autocomplete="off"></td>
+          <td ><input style="width:100%;text-align:right;border:none" name="idt_terjual[]" value="{{number_format($detail->terjual,0,',','.')}}" autocomplete="off" readonly=""></td>
 
-          <td ><input class="jumlahAwal{{$detail->i_id}}" style="width:100%;text-align:right;border:none" name="jumlahAwal[]" value="" autocomplete="off"></td>
+          <td ><input class="sisa{{$detail->i_id}}" onblur=";setQty(event,'sisa{{$detail->i_id}}')" onclick="setAwal(event,'sisa{{$detail->i_id}}')"
+            style="width:100%;text-align:right;border:none" name="idt_sisa[]" value="" autocomplete="off" ></td>
           
           <td><div style="padding-top:6px">{{$detail->s_name}}</div></td>
-          <td><input class="harga{{$detail->i_id}} alignAngka" style="width:100%;border:none" name="sd_price[]" value="{{number_format($detail->idt_price,0,',','.')}}"" readonly></td>
+          <td><input class="harga{{$detail->i_id}} alignAngka" style="width:100%;border:none" name="idt_price[]" value="{{number_format($detail->idt_price,0,',','.')}}"" readonly></td>
 
 
 
-          <td><input style="width:100%;" name="sd_total[]" class="totalPerItem alignAngka totalPerItem{{$detail->i_id}}" readonly value="{{number_format($detail->idt_qty*$detail->idt_price,0,',','.')}}"></td>
+          <td><input style="width:100%;" name="idt_total[]" class="totalPerItem alignAngka totalPerItem{{$detail->i_id}}" readonly value="{{number_format($detail->idt_qty*$detail->idt_price,0,',','.')}}"></td>
           <td>
-               <select class="">
+               <select class="" name="idt_action[]">
                     <option>-</option>
                     <option>Diambil</option>
                     <option>Ditukar Harga</option>
@@ -219,7 +226,25 @@
                   </div>
                   <div class="col-md-6 col-sm-6 col-xs-12">
                       <div class="form-group">
-                        <input type="text" id="s_gross" name="it_total" readonly="true" class="form-control input-sm reset" style="text-align: right;" value="{{number_format($master->it_total,'0',',','.')}}" disabled="">
+                        <input type="text" id="s_gross" name="it_total" readonly="true" class="form-control input-sm reset" style="text-align: right;" value="{{number_format($master->it_total,'0',',','.')}}" readonly="" >
+                      </div>
+                  </div>
+
+                   <div class="col-md-6 col-sm-6 col-xs-12">                    
+                      <label class="control-label tebal" for="penjualan">Total Terjual</label>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                      <div class="form-group">
+                        <input type="text"  name="total_terjual" readonly="true" class="form-control input-sm reset" style="text-align: right;" value="{{number_format($totalTerjual,'0',',','.')}}" readonly="">
+                      </div>
+                  </div>
+               
+                  <div class="col-md-6 col-sm-6 col-xs-12">                    
+                      <label class="control-label tebal" for="penjualan">Total Dibayar</label>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                      <div class="form-group">
+                        <input type="text"  name="total_terjual" class="form-control input-sm reset" style="text-align: right;" value="{{number_format($totalTerjual,'0',',','.')}}" >
                       </div>
                   </div>
                
@@ -240,17 +265,32 @@
       
                   <div class="col-md-12 col-sm-12 col-xs-12" align="right">
                     <button class="btn btn-danger " type="button" onclick="batal()">Batal</button>
-                   <!--   <button style="display: none;" class="btn btn-warning btn-disabled terima" type="button" onclick="Terima('draft')">Terima</button>     -->                          
-                    <button class="btn btn-warning btn-disabled draft" type="button" onclick="simpanPos('draft')" disabled="">Draft</button>
-                    <button type="button" class="btn-primary btn btn-disabled perbarui" data-toggle="modal" disabled="" style="display: none;" id="perbarui" 
-                    onclick="modalShow()">Perbarui</button>
-                    <button class="btn btn-primary btn-disabled draft" type="button" onclick="simpanPos('final')" disabled="">Simpan</button>
+                    <button class="btn btn-primary draft" type="button" onclick="simpan()" >Simpan</button>
                   </div>
              
         
       </div>
   </form>
 </div>
+
+<script type="text/javascript">
+  function simpan(){
+      var formPos=$('#dataPos').serialize();
+
+     $.ajax({
+          url     :  baseUrl+'/penjualan/barang-titipan/serah-terima/store',
+          type    : 'GET', 
+          data    :  formPos,
+          dataType: 'json',
+          success : function(response){    
+                    
+                    if(response.status=='sukses'){
+                        }
+                    
+          }
+      });
+  }
+</script>
 
 
 

@@ -21,7 +21,7 @@ class d_itemtitipan_dt extends Model
     const CREATED_AT = 'idt_created';
     const UPDATED_AT = 'idt_updated';
 
-    protected $fillable = ['idt_itemtitipan','idt_detailid','idt_date','idt_item','idt_qty','idt_price'];
+    protected $fillable = ['idt_itemtitipan','idt_detailid','idt_date','idt_item','idt_qty','idt_price','idt_terjual','idt_sisa','idt_action'];
 
     static function itemTitipanDt($id){
 	   	$titipan_dt=d_itemtitipan_dt::

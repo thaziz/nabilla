@@ -82,5 +82,8 @@ class itemTitipanController extends Controller
       $data=d_itemtitipan_dt::itemTitipanDt($id);
       return view('POS::barangTitipan/detailSerahTerima',compact('data','master'));      
     }
+    function serahTerimaStore(Request $request){
+      return  d_item_titipan::serahTerimaStore($request);
+    }
 
 }
